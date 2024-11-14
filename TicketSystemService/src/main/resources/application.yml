@@ -1,0 +1,24 @@
+#Cấu hình tên ứng dụng
+spring:
+  application:
+    name: ticket-microservice-dataset
+
+# Cấu hình Eureka Server.
+#Ứng dụng sẽ đăng ký (register) và gửi yêu cầu đến Eureka Server tại địa chỉ này.
+eureka:
+    client:
+      serviceUrl:
+        defaultZone: http://localhost:8761/eureka/
+
+#Cấu hình cổng máy chủ HTTP
+#Bạn có thể truy cập API của ứng dụng tại http://localhost:8098.
+server: 
+  port: 8098
+
+#Cấu hình các endpoint quản lý
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,hystrix.stream  
+
